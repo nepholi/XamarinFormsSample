@@ -20,3 +20,11 @@ D:\New folder\Source\L06\L06\L06\obj\Debug\L06.dll
 D:\New folder\Source\L06\L06\L06\obj\Debug\L06.pdb
 D:\New folder\Source\L06\L06\L06\obj\Debug\L06.dll.mdb
 D:\New folder\Source\L06\L06\L06\bin\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
