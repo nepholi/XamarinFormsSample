@@ -11,14 +11,12 @@ namespace L05_2
 {
     public class MyListViewPage : ContentPage
     {
-        //private string[] cityNames = { "基隆市", "台北市", "新北市", "桃園市", "新竹市", "新竹縣", "苗栗縣", "台中市", "彰化縣", "南投縣", "雲林縣", "嘉義市", "嘉義縣", "台南市", "高雄市", "屏東縣", "台東縣", "花蓮縣", "宜蘭縣", "金門縣", "澎湖縣" };
         private Picker cityPicker;
         private string cityUserChoose;
         private Picker areaPicker;
         private string areaUserChoose;
 
         private Button searchButton;
-        private Entry areaEntry;
 
         
         private List<FamilyStore> myStoreDataList;
@@ -28,13 +26,9 @@ namespace L05_2
         public MyListViewPage(string title)
         {
             Title = title;
-
             myStoreDataList = new List<FamilyStore>();
             myWebApiService = new WebApiServices();
             myCityAreaManager = new CityAreaManager();
-
-            searchButton = new Button { Text = "Search" };
-            areaEntry = new Entry{ Placeholder = "請輸入行政區域"};
 
             //for CityPicker
             cityPicker = new Picker {
@@ -64,37 +58,52 @@ namespace L05_2
             };
 
             areaPicker.SelectedIndexChanged += (sender, args) => {
-                areaUserChoose = cityPicker.Items[areaPicker.SelectedIndex];
+                areaUserChoose = areaPicker.Items[areaPicker.SelectedIndex];
+                searchButton.IsEnabled = true;
             };
 
+            //for listview
             var listView = new ListView
             {
                 IsPullToRefreshEnabled = true,
                 RowHeight = 80,
-                ItemsSource = new[] { new StoreData {} },
+                ItemsSource = new[] { new StoreData { Name = "Name", Tel = "Tel", Address = "Address" } },
                 ItemTemplate = new DataTemplate(typeof(MyListViewCell))
             };
 
-            searchButton.Clicked += async (sender, e) =>
-            {
-                if(cityUserChoose != null && cityUserChoose != empty) 
-
-                var resultData = await myWebApiService.GetDataAsync(cityUserChoose, areaUserChoose);
-                myStoreDataList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FamilyStore>>(resultData);
-
-                Debug.WriteLine(myStoreDataList.Count);
-            };
-            
             listView.ItemTapped += (sender, e) =>
             {
                 var baseUrl = "https://www.google.com.tw/maps/place/";
                 var storeData = e.Item as StoreData;
-               
+
                 if (storeData != null)
-                    Device.OpenUri(new Uri( $"{baseUrl}{storeData.Address}"));
+                    Device.OpenUri(new Uri($"{baseUrl}{storeData.Address}"));
 
                 ((ListView)sender).SelectedItem = null;
             };
+
+            //for searchButton
+            searchButton = new Button { Text = "Search" };
+            searchButton.IsEnabled = false;
+            searchButton.Clicked += async (sender, e) =>
+            {
+                var resultData = await myWebApiService.GetDataAsync(cityUserChoose, areaUserChoose);
+                myStoreDataList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FamilyStore>>(resultData);
+
+                var newdata = new List<StoreData>();
+
+                foreach (var fs in myStoreDataList)
+                {
+                    newdata.Add(new StoreData { Name = fs.NAME, Address = fs.addr, Tel = fs.TEL });
+                }
+
+                
+                listView.ItemsSource = null;
+                listView.ItemsSource = newdata;
+
+                Debug.WriteLine("Store count:" + myStoreDataList.Count);
+            };
+
 
             Padding = new Thickness(0, 20, 0, 0);
             Content = new StackLayout
@@ -102,15 +111,15 @@ namespace L05_2
                 Orientation = StackOrientation.Vertical,
                 Children =
                 {
-                    cityPicker,
-                    areaEntry,
-                    searchButton,
                     new Label
                     {
                         HorizontalTextAlignment= TextAlignment.Center,
                         Text = Title,
                         FontSize = 30
                     },
+                    cityPicker,
+                    areaPicker,
+                    searchButton,
                     listView
                 }
             };

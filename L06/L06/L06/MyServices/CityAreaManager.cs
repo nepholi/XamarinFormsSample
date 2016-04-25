@@ -9,6 +9,7 @@ namespace L05_2.MyServices
 {
     public class CityAreaManager
     {
+        //private string[] cityNames = { "基隆市", "台北市", "新北市", "桃園市", "新竹市", "新竹縣", "苗栗縣", "台中市", "彰化縣", "南投縣", "雲林縣", "嘉義市", "嘉義縣", "台南市", "高雄市", "屏東縣", "台東縣", "花蓮縣", "宜蘭縣", "金門縣", "澎湖縣" };
         private List<CityAreaDataBase> cadb_array;
 
         public CityAreaManager()
@@ -27,13 +28,11 @@ namespace L05_2.MyServices
         }
 
         public List<string> GetAreaList(string cityName) {
-
             foreach (var cadb in cadb_array) {
                 if (cadb.city.Equals(cityName)) {
                     return cadb.area;
                 }
             }
-            Debug.WriteLine("Can not find any result for area");
             return null;
         }
     }

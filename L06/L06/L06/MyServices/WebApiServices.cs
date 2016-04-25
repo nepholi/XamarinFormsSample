@@ -24,7 +24,9 @@ namespace L05_2.MyServices
             _httpClient.DefaultRequestHeaders.Add("Referer", "http://www.family.com.tw/marketing/inquiry.aspx");
             _httpClient.DefaultRequestHeaders.Add("Host", "api.map.com.tw");
 
-            var response = await _httpClient.GetAsync("http://api.map.com.tw/net/familyShop.aspx?searchType=ShopList&type=&city=" + city + "&area=大安區&road=&fun=showStoreList&key=6F30E8BF706D653965BDE302661D1241F8BE9EBC");
+            var webapiCommand = "http://api.map.com.tw/net/familyShop.aspx?searchType=ShopList&type=&city=" + city + "&area=" + area + "&road=&fun=showStoreList&key=6F30E8BF706D653965BDE302661D1241F8BE9EBC";
+
+            var response = await _httpClient.GetAsync(webapiCommand);
 
             var responseAsString = await response.Content.ReadAsStringAsync();
 
