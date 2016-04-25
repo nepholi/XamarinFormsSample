@@ -11,9 +11,13 @@ namespace L05_2
 {
     public class MyListViewPage : ContentPage
     {
+        private string[] cityNames = { "基隆市", "台北市", "新北市", "桃園市", "新竹市", "新竹縣", "苗栗縣", "台中市", "彰化縣", "南投縣", "雲林縣", "嘉義市", "嘉義縣", "台南市", "高雄市", "屏東縣", "台東縣", "花蓮縣", "宜蘭縣", "金門縣", "澎湖縣" };
+        private string cityNameUserChoose;
+
         private Button searchButton;
-        private Entry cityEntry;
         private Entry areaEntry;
+
+        private Picker cityPicker;
         private List<FamilyStore> myStoreDataList;
         private readonly WebApiServices myWebApiService;
         public MyListViewPage(string title)
@@ -23,10 +27,30 @@ namespace L05_2
             myStoreDataList = new List<FamilyStore>();
             myWebApiService = new WebApiServices();
 
-            searchButton = new Button {Text = "Search"};
-            cityEntry = new Entry { Placeholder = "請輸入城市名稱" };
+            searchButton = new Button { Text = "Search" };
             areaEntry = new Entry{ Placeholder = "請輸入行政區域"};
-            
+
+            cityPicker = new Picker {
+                Title = "請輸入城市名稱",
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+            foreach (var cn in cityNames) {
+                cityPicker.Items.Add(cn);
+            };
+
+            cityPicker.SelectedIndexChanged += (sender, args) =>
+            {
+                if (cityPicker.SelectedIndex == -1)
+                {
+                    cityNameUserChoose = "台北市";
+                }
+                else
+                {
+                    cityNameUserChoose = cityPicker.Items[cityPicker.SelectedIndex];
+                }
+            };
+
             var listView = new ListView
             {
                 IsPullToRefreshEnabled = true,
@@ -37,15 +61,11 @@ namespace L05_2
 
             searchButton.Clicked += async (sender, e) =>
             {
-                if (cityEntry != null && cityEntry.Text == string.Empty)
-                {
-                    cityEntry.Text = "台北市";
-                }
                 if (areaEntry != null && areaEntry.Text == string.Empty)
                 {
                     areaEntry.Text = "大安區";
                 }
-                var resultData = await myWebApiService.GetDataAsync(cityEntry.Text, areaEntry.Text);
+                var resultData = await myWebApiService.GetDataAsync(cityNameUserChoose, areaEntry.Text);
                 myStoreDataList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FamilyStore>>(resultData);
 
                 Debug.WriteLine(myStoreDataList.Count);
@@ -68,7 +88,7 @@ namespace L05_2
                 Orientation = StackOrientation.Vertical,
                 Children =
                 {
-                    cityEntry,
+                    cityPicker,
                     areaEntry,
                     searchButton,
                     new Label

@@ -50,7 +50,6 @@ C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Xamarin.Forms
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Newtonsoft.Json.dll
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\L06.pdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\L06.dll.mdb
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Xamarin.Forms.Core.xml
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06.Droid\bin\Debug\Newtonsoft.Json.xml

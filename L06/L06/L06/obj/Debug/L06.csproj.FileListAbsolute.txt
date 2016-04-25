@@ -20,11 +20,25 @@ D:\New folder\Source\L06\L06\L06\obj\Debug\L06.dll
 D:\New folder\Source\L06\L06\L06\obj\Debug\L06.pdb
 D:\New folder\Source\L06\L06\L06\obj\Debug\L06.dll.mdb
 D:\New folder\Source\L06\L06\L06\bin\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
-C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.config
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.pdb
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Core.Design.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Xaml.Design.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.csproj.App.config
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.csprojResolveAssemblyReference.cache
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll
+C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.pdb
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\obj\Debug\L06.dll.mdb
 C:\Users\pow\Workspace\XamarinHomework\L06\L06\L06\bin\Debug\L06.dll.mdb
