@@ -67,7 +67,7 @@ namespace L05_2
             {
                 IsPullToRefreshEnabled = true,
                 RowHeight = 80,
-                ItemsSource = new[] { new StoreData { Name = "Name", Tel = "Tel", Address = "Address" } },
+                ItemsSource = null,
                 ItemTemplate = new DataTemplate(typeof(MyListViewCell))
             };
 
@@ -100,6 +100,8 @@ namespace L05_2
                 
                 listView.ItemsSource = null;
                 listView.ItemsSource = newdata;
+
+                searchButton.IsEnabled = false;
 
                 Debug.WriteLine("Store count:" + myStoreDataList.Count);
             };
