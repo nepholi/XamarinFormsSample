@@ -34,7 +34,7 @@ namespace L05_2
 			var callButton = new MyListViewCellButton
 			{
 				Text = "Call",
-				BackgroundColor = Color.Gray,
+				BackgroundColor = Color.Green,
 				
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
