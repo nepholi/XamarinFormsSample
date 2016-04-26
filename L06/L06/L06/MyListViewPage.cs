@@ -91,21 +91,20 @@ namespace L05_2
                 myStoreDataList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FamilyStore>>(resultData);
 
                 var newdata = new List<StoreData>();
-
                 foreach (var fs in myStoreDataList)
                 {
                     newdata.Add(new StoreData { Name = fs.NAME, Address = fs.addr, Tel = fs.TEL });
                 }
 
-                
+                //fresh listView for webapi response
                 listView.ItemsSource = null;
                 listView.ItemsSource = newdata;
 
+                //disable button until user change "area".
                 searchButton.IsEnabled = false;
 
                 Debug.WriteLine("Store count:" + myStoreDataList.Count);
             };
-
 
             Padding = new Thickness(0, 20, 0, 0);
             Content = new StackLayout
