@@ -43,6 +43,7 @@ namespace L05_2
             cityPicker.SelectedIndexChanged += (sender, args) => {
                 cityUserChoose = cityPicker.Items[cityPicker.SelectedIndex];
 
+                areaPicker.Items.Clear();
                 areaPicker.IsEnabled = true;
                 List<string> AreaNames = myCityAreaManager.GetAreaList(cityUserChoose);
                 foreach (var an in AreaNames)
@@ -58,8 +59,10 @@ namespace L05_2
             };
 
             areaPicker.SelectedIndexChanged += (sender, args) => {
-                areaUserChoose = areaPicker.Items[areaPicker.SelectedIndex];
-                searchButton.IsEnabled = true;
+                if (areaPicker.SelectedIndex >= 0) {
+                    areaUserChoose = areaPicker.Items[areaPicker.SelectedIndex];
+                    searchButton.IsEnabled = true;
+                }
             };
 
             //for listview
