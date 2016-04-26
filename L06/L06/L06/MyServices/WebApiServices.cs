@@ -29,11 +29,11 @@ namespace L05_2.MyServices
             var response = await _httpClient.GetAsync(webapiCommand);
 
             var responseAsString = await response.Content.ReadAsStringAsync();
-
-
             responseAsString = responseAsString.Remove(0, 14);
             responseAsString = responseAsString.Substring(0, responseAsString.Length -1);
             Debug.WriteLine(responseAsString);
+
+            _httpClient.DefaultRequestHeaders.Clear();
 
             return responseAsString;
 
